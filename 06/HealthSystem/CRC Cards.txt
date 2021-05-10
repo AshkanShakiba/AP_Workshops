@@ -1,0 +1,167 @@
+[
+  {
+    "name": "HealthSystem",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "presents records to universities",
+      "stores a collection of medical records",
+      "stores collection of people and universities"
+    ],
+    "collaborators": [
+      "MedicalRecord",
+      "University",
+      "Patient",
+      "Doctor",
+      "Pharmacist",
+      "Collection"
+    ]
+  },
+  {
+    "name": "University",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "receive medical records"
+    ],
+    "collaborators": [
+      "MedicalRecord",
+      "HealthSystem",
+      "Collection"
+    ]
+  },
+  {
+    "name": "Person",
+    "superclasses": "",
+    "subclasses": "Patient Doctor Pharmacist",
+    "type": 1,
+    "responsibilities": [
+      "stores some personal details as age, gender, job, degree of education, location and ..."
+    ],
+    "collaborators": [
+      "HealthSystem",
+      "MedicalRecord",
+      "Collection"
+    ]
+  },
+  {
+    "name": "Patient",
+    "superclasses": "Person",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "stores type of insurance",
+      "explaining sicknesses",
+      "give permission ",
+      "choosing doctor",
+      "trust on a new doctor for all records",
+      "trust on a new doctor for required records",
+      "receive and use medicines"
+    ],
+    "collaborators": [
+      "HealthSystem",
+      "MedicalRecord",
+      "Pharmacist",
+      "Doctor",
+      ""
+    ]
+  },
+  {
+    "name": "Doctor",
+    "superclasses": "Person",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "visit patients",
+      "making medical records",
+      "referencing the patient to another doctor",
+      "accepting a patient from another doctor"
+    ],
+    "collaborators": [
+      "HealthSystem",
+      "MedicalRecord",
+      "Patient"
+    ]
+  },
+  {
+    "name": "Pharmacist",
+    "superclasses": "Person",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "receiving medical records",
+      "presenting medicines"
+    ],
+    "collaborators": [
+      "HealthSystem",
+      "MedicalRecord",
+      "Patient"
+    ]
+  },
+  {
+    "name": "MedicalRecord",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "stores details of patients' sickness, its type and history, the security level, doctor's details and opinion, required medicines and the date",
+      "presenting details"
+    ],
+    "collaborators": [
+      "HealthSystem",
+      "University",
+      "Collection",
+      "Patient",
+      "Pharmacist",
+      "Doctor",
+      "Date"
+    ]
+  },
+  {
+    "name": "Insurance",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "has a type"
+    ],
+    "collaborators": [
+      "HealthSystem",
+      "Patient",
+      "Pharmacist",
+      "Doctor"
+    ]
+  },
+  {
+    "name": "Date",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "stores date"
+    ],
+    "collaborators": [
+      "MedicalRecord"
+    ]
+  },
+  {
+    "name": "Collection",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "stores a collection of objects"
+    ],
+    "collaborators": [
+      "HealthSystem",
+      "MedicalRecord",
+      "University",
+      "Patient",
+      "Doctor",
+      "Pharmacist",
+      ""
+    ]
+  }
+]

@@ -1,0 +1,198 @@
+[
+  {
+    "name": "ReservationSystem",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "stores reservations",
+      "stores customers' phone numbers",
+      "finding shows by title and the date",
+      "reserve seats for customers",
+      "accepting reservation of seats from customers",
+      "find and offer adjacent seats",
+      "find and remind reservations",
+      "canceling reservations",
+      "informing canceled shows to customers",
+      "adding new theaters",
+      "stores future shows"
+    ],
+    "collaborators": [
+      "PhoneNumber",
+      "Reservation",
+      "Customer",
+      "Collection",
+      "Theater",
+      "Show",
+      "Seat"
+    ]
+  },
+  {
+    "name": "Reservation",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "stores a show and a customer",
+      "stores reserving details",
+      "can be canceled",
+      "add some other seats to the reservation"
+    ],
+    "collaborators": [
+      "ReservationSystem",
+      "Customer",
+      "Show"
+    ]
+  },
+  {
+    "name": "Customer",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "stores personal details including phone number",
+      "reserving seats",
+      "can request for adjacent seats",
+      "adding some other seats to previous reservations"
+    ],
+    "collaborators": [
+      "ReservationSystem",
+      "PhoneNumber",
+      "Reservation",
+      "Seat"
+    ]
+  },
+  {
+    "name": "PhoneNumber",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "stores a phone number"
+    ],
+    "collaborators": [
+      "ReservationSystem",
+      "Customer"
+    ]
+  },
+  {
+    "name": "Theater",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "stores some rows and their seats",
+      "accepting reservation request",
+      "find and offer adjacent seats",
+      "canceling reservations"
+    ],
+    "collaborators": [
+      "Collection",
+      "Row",
+      "Seat"
+    ]
+  },
+  {
+    "name": "Show",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "stores the time, the date, the movie and the theater",
+      "plan for the time, the date, the movie and the theater",
+      "presenting details of theater and capacity",
+      "ability to reserve seats",
+      "find and offer adjacent seats",
+      "canceling reservations",
+      "can be canceled"
+    ],
+    "collaborators": [
+      "ReservationSystem",
+      "Reservation",
+      "Theater",
+      "Movie",
+      "Date"
+    ]
+  },
+  {
+    "name": "Movie",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "stores a movie's details"
+    ],
+    "collaborators": [
+      "Show"
+    ]
+  },
+  {
+    "name": "Row",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "stores some seats",
+      "receiving reservation request",
+      "finding seat by number"
+    ],
+    "collaborators": [
+      "Theater",
+      "Seat"
+    ]
+  },
+  {
+    "name": "Seat",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "stores the theater, number, row and column",
+      "stores the state of seat",
+      "receiving reservation "
+    ],
+    "collaborators": [
+      "Customer",
+      "Theater",
+      "Row"
+    ]
+  },
+  {
+    "name": "Date",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "stores a date"
+    ],
+    "collaborators": [
+      "Reservation",
+      "Show"
+    ]
+  },
+  {
+    "name": "Time",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "stores time"
+    ],
+    "collaborators": [
+      "Reservation",
+      "Show"
+    ]
+  },
+  {
+    "name": "Collection",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "stores a collection of objects"
+    ],
+    "collaborators": [
+      "ReservationSystem"
+    ]
+  }
+]
